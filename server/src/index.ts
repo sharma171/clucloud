@@ -32,3 +32,6 @@ app.listen(PORT, () => {
   console.log(`   - GET http://localhost:${PORT}/api/users?offset=0&limit=50`);
   console.log(`   - GET http://localhost:${PORT}/health`);
 });
+
+export default app;
+export { app };
