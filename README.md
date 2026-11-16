@@ -79,12 +79,15 @@ Open two terminal windows:
 
 #### Terminal 1 — Start the Express API Server (Port 5001)
 ```bash
-npm --prefix server run dev
+cd ./server
+
+npm run dev
 ```
 
 #### Terminal 2 — Start the React Frontend (Port 5173)
 ```bash
-npm --prefix reactassign run dev
+cd ./reactassign
+npm run dev
 ```
 > Open **http://localhost:5173/** in your browser.
 
