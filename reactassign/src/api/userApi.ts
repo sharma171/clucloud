@@ -1,5 +1,7 @@
 import type { UsersResponse, QueryUsersParams, FilterMetaResponse } from '../types/user';
 
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '');
+
 /**
  * Pure HTTP transport layer.
  * Passes AbortSignal directly to native fetch() for immediate velocity request ejection.
@@ -49,7 +51,7 @@ export async function fetchUsers({
     params.set('sortOrder', sortOrder);
   }
 
-  const response = await fetch(`/api/users?${params.toString()}`, {
+  const response = await fetch(`${API_BASE_URL}/api/users?${params.toString()}`, {
     signal,
     headers: {
       Accept: 'application/json'
@@ -67,7 +69,7 @@ export async function fetchUsers({
  * Fetch available filter metadata (unique locations & skills)
  */
 export async function fetchFilterMeta(): Promise<FilterMetaResponse> {
-  const response = await fetch('/api/users/filters', {
+  const response = await fetch(`${API_BASE_URL}/api/users/filters`, {
     headers: {
       Accept: 'application/json'
     }
