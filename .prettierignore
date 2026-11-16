@@ -1,0 +1,14 @@
+node_modules/
+*/node_modules/
+dist/
+dist-ssr/
+*/dist/
+build/
+coverage/
+*.log
+.git/
+.vscode/
+.idea/
+package-lock.json
+*/package-lock.json
+server/data/users.json
